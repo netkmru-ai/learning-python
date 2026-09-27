@@ -1,48 +1,49 @@
 """
-Lesson 1: Python Basics
-=======================
+Урок 1: Основы Python
+=====================
 
-Welcome to your first Python lesson! Run this file with:
+Добро пожаловать на первый урок Python! Запустите этот файл командой:
 
     python3 lesson_1.py
 
-Read through the comments, look at the output, then try the exercises
-at the bottom. Lines starting with `#` are comments -- Python ignores them.
+Прочитайте комментарии, посмотрите на вывод программы, а затем попробуйте
+выполнить упражнения в конце файла. Строки, начинающиеся с `#`, — это
+комментарии: Python их игнорирует.
 """
 
 
 # ---------------------------------------------------------------------------
-# 1. Printing output
+# 1. Вывод на экран
 # ---------------------------------------------------------------------------
-# print() shows text on the screen. Text goes inside quotes ("..." or '...').
-print("Hello, world!")
-print('Single quotes work too.')
-print("You can print several things at once:", 1, 2, 3)
+# print() выводит текст на экран. Текст пишется в кавычках ("..." или '...').
+print("Привет, мир!")
+print('Одинарные кавычки тоже работают.')
+print("Можно вывести несколько значений сразу:", 1, 2, 3)
 
 
 # ---------------------------------------------------------------------------
-# 2. Variables
+# 2. Переменные
 # ---------------------------------------------------------------------------
-# A variable is a name that stores a value. Use `=` to assign.
-name = "Ada"
+# Переменная — это имя, которое хранит значение. Присваивание делается через `=`.
+name = "Ада"
 age = 36
-print("Name:", name)
-print("Age:", age)
+print("Имя:", name)
+print("Возраст:", age)
 
-# Variables can be changed later.
+# Значение переменной можно изменить позже.
 age = age + 1
-print("Next year,", name, "will be", age)
+print("В следующем году", name, "исполнится", age)
 
 
 # ---------------------------------------------------------------------------
-# 3. Basic data types
+# 3. Основные типы данных
 # ---------------------------------------------------------------------------
-whole_number = 42          # int   -> whole numbers
-decimal_number = 3.14      # float -> numbers with a decimal point
-greeting = "Hi there"      # str   -> text (a "string")
-is_learning = True         # bool  -> True or False
+whole_number = 42          # int   -> целые числа
+decimal_number = 3.14      # float -> дробные числа (с десятичной точкой)
+greeting = "Привет"        # str   -> текст («строка»)
+is_learning = True         # bool  -> логическое значение: True или False
 
-# type() tells you what kind of value something is.
+# type() показывает, к какому типу относится значение.
 print(type(whole_number))
 print(type(decimal_number))
 print(type(greeting))
@@ -50,86 +51,86 @@ print(type(is_learning))
 
 
 # ---------------------------------------------------------------------------
-# 4. Arithmetic
+# 4. Арифметика
 # ---------------------------------------------------------------------------
 a = 17
 b = 5
-print("a + b  =", a + b)    # addition        -> 22
-print("a - b  =", a - b)    # subtraction     -> 12
-print("a * b  =", a * b)    # multiplication  -> 85
-print("a / b  =", a / b)    # division        -> 3.4 (always a float)
-print("a // b =", a // b)   # floor division  -> 3   (drops the remainder)
-print("a % b  =", a % b)    # remainder       -> 2
-print("a ** 2 =", a ** 2)   # power           -> 289
+print("a + b  =", a + b)    # сложение            -> 22
+print("a - b  =", a - b)    # вычитание           -> 12
+print("a * b  =", a * b)    # умножение           -> 85
+print("a / b  =", a / b)    # деление             -> 3.4 (всегда float)
+print("a // b =", a // b)   # целочисленное деление -> 3 (без остатка)
+print("a % b  =", a % b)    # остаток от деления  -> 2
+print("a ** 2 =", a ** 2)   # возведение в степень -> 289
 
 
 # ---------------------------------------------------------------------------
-# 5. Working with strings
+# 5. Работа со строками
 # ---------------------------------------------------------------------------
-first = "Grace"
-last = "Hopper"
+first = "Грейс"
+last = "Хоппер"
 
-# Join strings with +
+# Строки можно соединять с помощью +
 full_name = first + " " + last
 print(full_name)
 
-# f-strings: put an `f` before the quotes and variables inside { }
-print(f"{first} has {len(first)} letters in her first name.")
+# f-строки: поставьте `f` перед кавычками, а переменные пишите внутри { }
+print(f"В имени {first} {len(first)} букв.")
 
-# Handy string methods
-print(full_name.upper())    # GRACE HOPPER
-print(full_name.lower())    # grace hopper
-print("  padded  ".strip()) # removes spaces at the ends -> "padded"
+# Полезные методы строк
+print(full_name.upper())      # ГРЕЙС ХОППЕР
+print(full_name.lower())      # грейс хоппер
+print("  с пробелами  ".strip())  # убирает пробелы по краям -> "с пробелами"
 
 
 # ---------------------------------------------------------------------------
-# 6. Converting between types
+# 6. Преобразование типов
 # ---------------------------------------------------------------------------
 number_text = "10"
-number = int(number_text)       # "10" (text) -> 10 (int)
+number = int(number_text)       # "10" (текст) -> 10 (целое число)
 print(number + 5)               # 15
 
 price = 9.99
-print("Price: " + str(price))   # convert a number to text before joining
+print("Цена: " + str(price))    # перед соединением число нужно превратить в текст
 
 
 # ---------------------------------------------------------------------------
-# 7. Making decisions with if / elif / else
+# 7. Условия: if / elif / else
 # ---------------------------------------------------------------------------
 temperature = 22
 
 if temperature > 30:
-    print("It's hot!")
+    print("Жарко!")
 elif temperature > 15:
-    print("It's pleasant.")
+    print("Приятная погода.")
 else:
-    print("It's cold.")
+    print("Холодно.")
 
-# Note: the indented lines (4 spaces) belong to the `if` block above them.
-# Comparison operators: ==  !=  <  >  <=  >=
-
-
-# ---------------------------------------------------------------------------
-# 8. Getting input from the user (optional)
-# ---------------------------------------------------------------------------
-# input() pauses and waits for the user to type something.
-# It always returns a string. Uncomment the lines below to try it:
-#
-# your_name = input("What is your name? ")
-# print(f"Nice to meet you, {your_name}!")
+# Обратите внимание: строки с отступом (4 пробела) относятся к блоку `if` над ними.
+# Операторы сравнения: ==  !=  <  >  <=  >=
 
 
 # ---------------------------------------------------------------------------
-# Exercises -- try these yourself!
+# 8. Ввод данных от пользователя (по желанию)
 # ---------------------------------------------------------------------------
-# 1. Create a variable `city` with the name of your city and print
-#    "I live in <city>" using an f-string.
+# input() останавливает программу и ждёт, пока пользователь что-нибудь введёт.
+# Функция всегда возвращает строку. Раскомментируйте строки ниже, чтобы попробовать:
 #
-# 2. Store the length and width of a rectangle in two variables and
-#    print its area and perimeter.
+# your_name = input("Как вас зовут? ")
+# print(f"Приятно познакомиться, {your_name}!")
+
+
+# ---------------------------------------------------------------------------
+# Упражнения — попробуйте сами!
+# ---------------------------------------------------------------------------
+# 1. Создайте переменную `city` с названием вашего города и выведите
+#    «Я живу в городе <city>» с помощью f-строки.
 #
-# 3. Write an if/else that prints "even" if a number is even and "odd"
-#    otherwise. Hint: use the % operator.
+# 2. Сохраните длину и ширину прямоугольника в две переменные и выведите
+#    его площадь и периметр.
 #
-# 4. Ask the user for their birth year with input(), convert it to an int,
-#    and print how old they will be in 2030.
+# 3. Напишите if/else, который выводит «чётное», если число чётное,
+#    и «нечётное» в противном случае. Подсказка: используйте оператор %.
+#
+# 4. Спросите у пользователя год рождения с помощью input(), преобразуйте его
+#    в int и выведите, сколько ему будет лет в 2030 году.
